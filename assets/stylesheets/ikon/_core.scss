@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'ikon';
+  src: url(if($ikon-sass-asset-helper, ikon-font-path('#{$ikon-font-path}#{$ikon-font-name}.eot?-wqk2e0'), '#{$ikon-font-path}#{$ikon-font-name}.eot?-wqk2e0'));
+  src: url(if($ikon-sass-asset-helper, ikon-font-path('#{$ikon-font-path}#{$ikon-font-name}.eot?#iefix-wqk2e0'), '#{$ikon-font-path}#{$ikon-font-name}.eot?#iefix-wqk2e0')) format('embedded-opentype'),
+    url(if($ikon-sass-asset-helper, ikon-font-path('#{$ikon-font-path}#{$ikon-font-name}.woff?-wqk2e0'), '#{$ikon-font-path}#{$ikon-font-name}.woff?-wqk2e0')) format('woff'),
+    url(if($ikon-sass-asset-helper, ikon-font-path('#{$ikon-font-path}#{$ikon-font-name}.ttf?-wqk2e0'), '#{$ikon-font-path}#{$ikon-font-name}.ttf?-wqk2e0')) format('truetype'),
+    url(if($ikon-sass-asset-helper, ikon-font-path('#{$ikon-font-path}#{$ikon-font-name}.svg?-wqk2e0#ikon'), '#{$ikon-font-path}#{$ikon-font-name}.svg?-wqk2e0#ikon')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ikon {
+  font-family: 'ikon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@each $item in $ikon-set {
+  $name: nth($item, 1);
+  $code: nth($item, 2);
+
+  .ikon-#{$name} {
+    &:before {
+      content: "#{$code}";
+    }
+  }
+}
+
+
+
